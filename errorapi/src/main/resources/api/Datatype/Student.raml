@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  students_details:
+    properties:
+      student_name:
+        type: string
+        required: true
+      student_id:
+        type: string
+        required: true
+      student_stream:
+        type: string
+        required: false
+      student_city:
+        type: string
+        required: false
+  student_subject:
+    properties:
+      1st_sub:
+        type: string
+        required: true
+      2nd_sub:
+        type: string
+        required: false
+      3rd_sub:
+        type: string
+        required: false 

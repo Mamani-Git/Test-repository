@@ -1,0 +1,13 @@
+{
+  "students_details": {
+    "student_name": "shan",
+    "student_id": "01",
+    "student_stream": "cse",
+    "student_city": "kolkata"
+  },
+  "student_subject": {
+    "1st_sub": "math",
+    "2nd_sub": "computer science",
+    "3rd_sub": "java"
+  }
+}

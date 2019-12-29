@@ -1,0 +1,51 @@
+#%RAML 1.0 Library
+
+resourceTypes:
+  Student_lib_records:
+    get:
+      queryParameters:
+        student_name:
+          type: string
+          required: true
+        student_id:
+          type: string
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              type: string
+              example: "Please find the student details"
+        500:
+          body:
+            application/json:
+              type: string
+              example: "Getting server error"
+    post:
+      body:
+        application/json:
+          type: string
+          example: {"adajhfjfhksfh"}
+      responses:
+        200:
+          body:
+            application/json:
+              type: string
+              example: {" successfully created"}
+                
+traits:
+  batch-job-response:  
+    responses:
+      200:
+        body:
+          application/json:
+            type: string
+            example:
+              "getting Successful Response"
+
+
+            
+                
+                
+        
+  

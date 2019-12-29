@@ -1,0 +1,73 @@
+#%RAML 1.0
+title: College-api
+version: v1
+protocols: [ HTTP , HTTPS ]
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/bc704e6c-b5cb-40c2-bf24-c021c1913f26/ # baseUri: https://my_college.com
+
+
+uses:
+ lib: Library/Student_lib.raml
+
+types:
+  student: !include Datatype/Student.raml
+
+traits:
+  -clientID: !include Traits/client_id_enforcement.raml
+
+/Student_lib_records: 
+  is: [-clientID]
+  get:             
+    queryParameters:
+        student_name:
+          type: string
+          required: true
+        student_id:
+          type: string
+          required: true
+    responses:
+        200:
+          body:
+            application/json:
+              type: student
+              example: !include example/student_exam.json
+        500:
+          body:
+            application/json:
+              type: string
+              example: "Getting server error"
+  post:            
+      body:
+        application/json:
+          type: student
+          example: !include example/student_exam.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: string
+              example: " successfully created"
+  
+/batchJob:
+ post:
+  body:
+    application/json:
+      type: string
+      example: "create body"  
+  is: [lib.batch-job-response]
+    
+     
+    
+
+        
+    
+    
+
+
+
+
+
+
+
+  
+       
+    
